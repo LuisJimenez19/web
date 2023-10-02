@@ -52,7 +52,7 @@ function Hero({ openSection = false }) {
           </div>
           <p className="mx-auto">
             +{calculateAge("01/06/2021")} años en el mundo del desarrollo de
-            software. Actualemente estoy enfocado en el desarrollo web.
+            software. Actualmente estoy enfocado en el desarrollo web.
           </p>
         </motion.div>
 
