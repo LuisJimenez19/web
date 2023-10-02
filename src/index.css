@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  background-color: #ccc;
+  width: 5px;
+  scrollbar-gutter: stable;
+}
+::-webkit-scrollbar-thumb {
+  background: #486d8f;
+  border-radius: 16em;
+}
+
+/* Tarjeta principal */
+.hero {
+  transform: rotateX(0deg) !important;
+  transition: all 0.2s;
+}
+.hero-rotate {
+  transform: perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0) !important;
+  transition: all 0.2s;
+}
+
+/* Para el efecto modal */
+.home-page__center.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #00000063;
+  z-index: 10;
+  pointer-events: none;
+  transition: all 0.2s;
+}
+
+/* SECTION CONTACTO */
+
+@layer components {
+  #footerHomePage {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+  html.dark #footerHomePage {
+    background-image: url(./assets/images/bgGradient.avif);
+  }
+  #footerHomePage {
+    background-image: url(./assets/images/background.png);
+  }
+}
+
+.bg-bootstrap {
+  --tw-bg-opacity: 1;
+  background-color: #6366f1;
+}
+.bg-mongodb {
+  --tw-bg-opacity: 1;
+  background-color: #009988;
+}
+.bg-python {
+  --tw-bg-opacity: 1;
+  background-color: #ffec00;
+}
+.bg-php {
+  --tw-bg-opacity: 1;
+  background-color: #fd00459f;
+}
