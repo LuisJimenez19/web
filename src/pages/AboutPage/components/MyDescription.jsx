@@ -20,9 +20,10 @@ function MyDescription() {
   }, [last]);
 
   return (
-    <div className="flex flex-col gap-3    justify-center items-center">
+    <div className="flex flex-col gap-3   justify-center items-center">
       <motion.img
-        key={indexCurrentImage} // clave única para que Framer Motion pueda aplicar la animación al cambiar la imagen
+        loading="lazy"
+        key={avatars[indexCurrentImage].toString()} // clave única para que Framer Motion pueda aplicar la animación al cambiar la imagen
         initial={{
           opacity: 0,
           translateY: "10px",
@@ -39,7 +40,7 @@ function MyDescription() {
           duration: 0.5,
         }}
         alt="Avatar de Luis Ángel Jimenez, el dueño de la web"
-        className="min-w-[300px] w-[300px]"
+        className="min-w-[300px] h-full object-cover inline-block w-[300px]"
         src={avatars[indexCurrentImage]}
       />
       <code className="text-sm inline-block whitespace-nowrap">

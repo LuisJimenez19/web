@@ -1,20 +1,17 @@
 import { DefaultLayout } from "../layouts/DefaultLayout";
 
-function ErrorPage() {
+function NotFound() {
   return (
     <DefaultLayout>
       <div className=" w-full  h-[80vh] flex place-content-center border items-center flex-col">
-        <div className="flex items-end">
-          <h1
-            className="font-bold text-[8em]
-            bg-gradient-to-r from-linkedin to-wpp bg-clip-text text-transparent
-            font-righteous  tracking-widest leading-none"
-          >
-            Ups
-          </h1>
-          <span className="text-[5em]">😲</span>
-        </div>
-        <p className="font-poppins text-xl">Ha ocurrido un error inesperado</p>
+        <h1
+          className="font-bold text-[10em]
+        bg-gradient-to-r from-linkedin to-wpp bg-clip-text text-transparent
+        font-righteous  tracking-widest leading-none"
+        >
+          404
+        </h1>
+        <p className="font-poppins text-xl">Página no encontrada</p>
         <a
           className="border-linkedin border-b text-linkedin 
         dark:border-slate-100 dark:text-slate-50
@@ -31,4 +28,4 @@ function ErrorPage() {
   );
 }
 
-export { ErrorPage };
+export { NotFound };

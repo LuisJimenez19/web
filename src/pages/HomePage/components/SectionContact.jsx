@@ -41,23 +41,23 @@ function SectionContact({ setOpenSection, openSection }) {
             </li>
             <li>
               <a
-                className="flex flex-col md:flex-row justify-center    items-center md:gap-2 hover:text-[#00b341]  group transition"
+                className="flex flex-col md:flex-row justify-center    items-center md:gap-2 hover:text-wpp  group transition"
                 href="https://api.whatsapp.com/send?phone=542634807932"
                 target="_blank"
                 rel="noreferrer"
               >
-                <WppIcon className="w-5 md:w-10 stroke-slate-800 dark:stroke-slate-100 group-hover:stroke-[#00b341]" />
+                <WppIcon className="w-5 md:w-10 stroke-slate-800 dark:stroke-slate-100 group-hover:stroke-wpp" />
                 <p>+54 2634 80 79 32</p>
               </a>
             </li>
             <li>
               <a
-                className="flex flex-col md:flex-row justify-center    items-center md:gap-2 hover:text-[#0a66c2]  group transition"
+                className="flex flex-col md:flex-row justify-center    items-center md:gap-2 hover:text-linkedin  group transition"
                 href="https://www.linkedin.com/in/luis-jim%C3%A9nez-90a859250/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <LikedinIcon className="w-5 md:w-10 stroke-slate-800 dark:stroke-slate-100 group-hover:stroke-[#0a66c2]" />
+                <LikedinIcon className="w-5 md:w-10 stroke-slate-800 dark:stroke-slate-100 group-hover:stroke-linkedin" />
                 <p>Luis Jimenez</p>
               </a>
             </li>

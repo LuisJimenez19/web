@@ -7,7 +7,7 @@ function ProgressBarSkill({ progress = 101, name = "", color = "blue-950" }) {
   const bgColor = `bg-${color}`;
 
   return (
-    <div className=" w-[75%] mx-auto bg-gray-600 shadow-2xl rounded-lg overflow-hidden relative ">
+    <div className=" flex-grow mx-auto bg-gray-600 shadow-2xl rounded-lg overflow-hidden relative ">
       <p className="text-center relative z-10">
         {name} {`${progress !== 101 ? progress + "%" : ""}`}
       </p>

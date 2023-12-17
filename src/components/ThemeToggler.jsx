@@ -4,7 +4,14 @@ import { APP_NAME } from "../config";
 
 function ThemeToggler() {
   const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem(`dark-mode-${APP_NAME}`) || "dark";
+    const preferesDarkMode = window.matchMedia(
+      "(preferes-color-scheme: dark)"
+    ).matches;
+
+    return (
+      localStorage.getItem(`dark-mode-${APP_NAME}`) ||
+      (preferesDarkMode ? "dark" : "light")
+    );
   });
 
   function handleDarkMode() {

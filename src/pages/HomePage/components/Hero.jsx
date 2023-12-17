@@ -3,19 +3,74 @@ import { motion } from "framer-motion";
 import imgAuthor from "../../../assets/images/luis-sin-bg.png";
 import { Background } from "./Background";
 import { calculateAge } from "../../../helpers/calculateAge";
+
+import "../css/index.css";
+import { useEffect, useRef } from "react";
+import { ShowLastVisit } from "../../../components/ShowLastVisit";
+
 function Hero({ openSection = false }) {
+  const CARD = useRef();
+
+  useEffect(() => {
+    const CONFIG = {
+      proximity: 40,
+      spread: 80,
+      blur: 20,
+      gap: 32,
+      vertical: false,
+      opacity: 0,
+    };
+
+    const UPDATE = (event) => {
+      // get the angle based on the center point of the card and pointer position
+
+      // Check the card against the proximity and then start updating
+      const CARD_BOUNDS = CARD?.current?.getBoundingClientRect();
+      // Get distance between pointer and outerbounds of card
+      if (
+        event?.x > CARD_BOUNDS.left - CONFIG.proximity &&
+        event?.x < CARD_BOUNDS.left + CARD_BOUNDS.width + CONFIG.proximity &&
+        event?.y > CARD_BOUNDS.top - CONFIG.proximity &&
+        event?.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
+      ) {
+        // If within proximity set the active opacity
+        CARD.current.style.setProperty("--active", 1);
+      } else {
+        CARD.current.style.setProperty("--active", CONFIG.opacity);
+      }
+      const CARD_CENTER = [
+        CARD_BOUNDS.left + CARD_BOUNDS.width * 0.5,
+        CARD_BOUNDS.top + CARD_BOUNDS.height * 0.5,
+      ];
+      let ANGLE =
+        (Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) *
+          180) /
+        Math.PI;
+      ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
+      CARD.current.style.setProperty("--start", ANGLE + 90);
+    };
+
+    document.body.addEventListener("pointermove", UPDATE);
+
+    return () => {
+      document.body.removeEventListener("pointermove", UPDATE);
+    };
+  }, []);
+
   return (
     <section
-      className="flex items-center justify-center flex-grow
-            w-[98%]
-            relative 
-            "
+      className={`flex items-center justify-center flex-grow
+      w-[98%]
+      relative `}
     >
+      <ShowLastVisit />
       {/* CAJA CONTIENE EL TEXTO Y LA IMAGEN */}
       <motion.div
+        ref={CARD}
+        id="card"
         className={`
-                text-center  w-full max-w-[1000px] overflow-hidden
-              min-h-[60vh] p-2
+                text-center  w-full max-w-[1000px] 
+              min-h-[50dvh] p-2
               flex flex-col  md:flex-row 
               md:justify-center md:items-center 
             items-end justify-end
@@ -23,6 +78,7 @@ function Hero({ openSection = false }) {
             rounded-[1.5em]
             dark:border-light-cyan
               ${!openSection ? "hero" : "hero-rotate"}
+            overflow-hidden relative
               `}
         initial={{
           scaleY: 0,
@@ -40,20 +96,59 @@ function Hero({ openSection = false }) {
             transitionDuration: ".2s",
             transitionDelay: ".1s",
           }}
-          className=" text-left px-3 flex flex-col gap-1"
+          className=" text-left px-3 flex flex-col gap-1 text-slate-800 dark:text-slate-100"
         >
+          <div className="grow"></div>
           <div>
-            <h1 className="text-xl md:text-3xl lg:text-5xl font-righteous whitespace-nowrap">
-              Hola, Soy Luis Ángel👋🏽
+            <h1
+              className="text-xl md:text-3xl lg:text-5xl font-righteous whitespace-nowrap  
+            
+            "
+            >
+              <span
+                className="dark:bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] 
+                bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900
+              dark:from-gray-900 dark:via-indigo-200 dark:to-gray-900
+              
+              
+              bg-clip-text text-transparent"
+              >
+                Hola, Soy Luis Ángel
+              </span>
+              👋🏽
             </h1>
             <h2 className="text-lg md:text-2xl lg:text-3xl font-mono">
               Desarrollador web
             </h2>
           </div>
           <p className="mx-auto">
-            +{calculateAge("01/06/2021")} años en el mundo del desarrollo de
+            +{calculateAge("01/01/2021")} años en el mundo del desarrollo de
             software. Actualmente estoy enfocado en el desarrollo web.
           </p>
+          <motion.a
+            initial={{
+              opacity: 0,
+              translateY: "-100%",
+              scale: 0,
+            }}
+            animate={{
+              opacity: 1,
+              translateY: "0",
+              scale: 1,
+              transitionDelay: "1s",
+            }}
+            href="https://drive.google.com/file/d/1mqjR4KkoGE3p9A-ASof1j4sWXWbJ3GbU/view?usp=sharing"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="border-linkedin border text-linkedin 
+                    dark:border-slate-100 dark:text-slate-50
+                    hover:text-slate-50 hover:bg-linkedin hover:border-slate-50
+                    dark:hover:bg-slate-50 dark:hover:text-linkedin dark:hover:border-linkedin hover:scale-95 transition-all
+            w-max py-2 px-3 rounded-xl text-sm self-center md:self-start  mb-2"
+          >
+            {" "}
+            Descargar CV
+          </motion.a>
         </motion.div>
 
         {/* IMAGEN */}
@@ -79,7 +174,7 @@ function Hero({ openSection = false }) {
             }}
           >
             <motion.img
-              className="md:max-w-[300px] lg:max-w-[350px] xl:max-w-[420px] block pointer-events-none "
+              className="md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] block pointer-events-none "
               initial={{
                 opacity: 0,
                 translateY: "10%",

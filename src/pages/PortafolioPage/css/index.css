@@ -1,0 +1,75 @@
+:root {
+  --from-skeleton: #e3e3e3;
+  --to-skeleton: #b5ccd2;
+
+  --view-timeline-name: --image;
+}
+
+@keyframes showproject {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+.card-project {
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  animation-timeline: var(--image);
+  animation-name: showProyect;
+
+  animation-range: entry 25% cover 30%;
+  animation-fill-mode: both;
+}
+
+/* <-----------skeleton effect--------------> */
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px #0000002a;
+  border-radius: 0.2em;
+}
+
+html.dark {
+  --from-skeleton: #3a4891;
+  --to-skeleton: #283a59;
+}
+
+.skeleton::after {
+  content: "";
+  width: 300%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: linear-gradient(
+    45deg,
+    var(--from-skeleton) 5%,
+    var(--to-skeleton) 50%
+  );
+  animation: skeleton 0.5s both infinite alternate;
+}
+
+.skeleton:nth-child(2n)::after {
+  background: linear-gradient(
+    -45deg,
+    var(--from-skeleton) 5%,
+    var(--to-skeleton) 50%
+  );
+  animation: skeleton 0.5s reverse infinite alternate;
+}
+
+@keyframes skeleton {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}

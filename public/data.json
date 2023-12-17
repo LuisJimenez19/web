@@ -1,0 +1,95 @@
+{
+    "projects": [
+        {
+            "images": [
+                "/mockups/gestion_desktop.webp",
+                "/mockups/gestion2_desktop.webp",
+                "/mockups/gestion3_desktop.webp",
+                "/mockups/gestion4_desktop.webp",
+                "/mockups/gestion_mobile.webp",
+                "/mockups/gestion2_mobile.webp",
+                "/mockups/gestion3_mobile.webp",
+                "/mockups/gestion4_mobile.webp"
+            ],
+            "name": "Gestión de pagos",
+            "subtitle": "Equipo de futbol",
+            "description": "App fullstack, backend con nodejs + express, MySql como gestor de la base de datos y frontend react, tailwindCSS + vitejs En este proyecto tuve la oportunidad de incorporar servicios de firebase como Cloud Messaging para las notificaciones en tiempo real, y el storage para guardar la imagenes de los jugadores. Ademas de implementar autenticación con JWT, roles para cada tipo de usuario, y firebase admin para poder hacer que el backend sea administrador de los servicios de firebase",
+            "linkDemo": "https://gestion-real.netlify.app/",
+            "badges": [
+                "html",
+                "css",
+                "javaScript",
+                "react",
+                "tailwind",
+                "nodejs",
+                "express",
+                "mySql",
+                "firebase"
+            ]
+        },
+        {
+            "images": [
+                "/mockups/taskify_desktop.webp",
+                "/mockups/taskify2_desktop.webp",
+                "/mockups/taskify3_desktop.webp",
+                "/mockups/taskify_mobile.webp",
+                "/mockups/taskify2_mobile.webp",
+                "/mockups/taskify3_mobile.webp"
+            ],
+            "name": "Taskify",
+            "subtitle": "Aplicación de productividad",
+            "description": "App fullstack, backend con nodejs + express, MySql como gestor de base de datos y en el frontend react, CUSTOM CSS + vitejs, en esta ocasión implemente JWT para la autenticación. En el frontend implemente Apis de terceros para darle más funcionalidades. Permite a los usuarios hacer las operaciones CRUD de tareas",
+            "linkGithub": "https://github.com/LuisJimenez19/app-fullstack",
+            "linkDemo": "https://taskifyap.netlify.app/",
+            "badges": [
+                "html",
+                "css",
+                "javaScript",
+                "react",
+                "nodejs",
+                "express",
+                "mySql"
+            ]
+        },
+        {
+            "images": [
+                "/mockups/puzzle_desktop.webp",
+                "/mockups/puzzle2_desktop.webp",
+                "/mockups/puzzle3_desktop.webp",
+                "/mockups/puzzle_mobile.webp",
+                "/mockups/puzzle2_mobile.webp",
+                "/mockups/puzzle3_mobile.webp"
+            ],
+            "name": "Rompebezacas",
+            "subtitle": "Juego de puzzle con un sistema de ranking",
+            "description": "Este proyecto esta desarrollado con React + tailwind y empaquetado con Vitejs, como backend use Firebase y firestore como base de datos para guardar la información y el puntaje de los usuarios.",
+            "linkGithub": "https://github.com/LuisJimenez19/rompebezacas",
+            "linkDemo": "https://rompebezacas.netlify.app/",
+            "badges": [
+                "html",
+                "css",
+                "javaScript",
+                "react",
+                "tailwind",
+                "firebase"
+            ]
+        },
+        {
+            "images": [
+                "/mockups/desafios_desktop.webp",
+                "/mockups/desafios2_desktop.webp",
+                "/mockups/desafios_mobile.webp"
+            ],
+            "name": "Portafolio",
+            "subtitle": "Desafíos Frontend Mentor",
+            "description": "Hecho con HTML, CSS y JS, estan algunos desafios que he hecho",
+            "linkGithub": "https://github.com/LuisJimenez19/desafios-frontend-mentor",
+            "linkDemo": "https://luisjimenez19.github.io/desafios-frontend-mentor/index.html",
+            "badges": [
+                "html",
+                "css",
+                "javaScript"
+            ]
+        }
+    ]
+}

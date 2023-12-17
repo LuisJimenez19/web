@@ -41,7 +41,7 @@ function SkillsPage() {
         {/* SECCION DE HABILIDADES */}
         <div className="font-poppins w-[90%] max-w-[1240px] mx-auto flex flex-wrap justify-around gap-5 ">
           {/* <---------HABILIDADES */}
-          <section className="w-full flex flex-wrap flex-col md:flex-row gap-5  ">
+          <section className="w-full flex flex-wrap flex-col md:flex-row gap-5  justify-center">
             <Fieldset skills={skillsFrontend} legend="Frontend" />
             <Fieldset skills={skillsBackend} legend="Backend" />
           </section>

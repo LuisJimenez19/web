@@ -1,6 +1,8 @@
 import {
+  AstroIcon,
   BootstrapIcon,
   CssIcon,
+  ExpressIcon,
   FeelIcon,
   FirebaseIcon,
   HtmlIcon,
@@ -40,6 +42,42 @@ export const skillsBackend = [
     color: "mongodb",
     progress: 70,
   },
+  {
+    icon: <AstroIcon />,
+    name: "Astro",
+    color: "astro",
+    progress: 65,
+  },
+  {
+    icon: <ExpressIcon />,
+    name: "Express",
+    color: "express",
+    progress: 65,
+  },
+  /*  {
+    icon: <PythonIcon />,
+    name: "Python",
+    color: "python",
+    progress: 70,
+  },
+  {
+    icon: <LaravelIcon />,
+    name: "Laravel",
+    color: "laravel",
+    progress: 70,
+  },
+  {
+    icon: <PhpIcon />,
+    name: "Php",
+    color: "php",
+    progress: 70,
+  },
+  {
+    icon: <GitIcon />,
+    name: "Git",
+    color: "gti",
+    progress: 70,
+  },*/
 ];
 export const skillsFrontend = [
   {
@@ -78,6 +116,12 @@ export const skillsFrontend = [
     color: "react",
     progress: 90,
   },
+  /*   {
+    icon: <VueIcon />,
+    name: "Vue",
+    color: "vue",
+    progress: 70,
+  }, */
 ];
 
 /* Cualidades */

@@ -71,3 +71,44 @@ html {
   --tw-bg-opacity: 1;
   background-color: #fd00459f;
 }
+
+.fade-in {
+  animation: fade-in 0.3s backwards linear !important;
+}
+
+.fade-in-icon {
+  animation: fade-in 0.2s backwards linear !important;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+}
