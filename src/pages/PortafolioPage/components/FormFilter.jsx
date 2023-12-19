@@ -27,7 +27,7 @@ function FormFilter({
         return tec === word;
       });
       if (!isExists) {
-        return tec.toLowerCase().includes(letter.toLowerCase());
+        return tec.toLowerCase().startsWith(letter.toLowerCase());
       }
     });
 
@@ -71,6 +71,8 @@ function FormFilter({
     filterForTecnologies([]);
     setWords([]);
     setSuggestion([]);
+    setCurrentWord("");
+    inputRef.current.value = "";
   }
 
   useEffect(() => {

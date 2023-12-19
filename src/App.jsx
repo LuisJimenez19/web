@@ -66,7 +66,7 @@ function App() {
       timestamp: Date.now(),
     })
       .then((res) => {
-        console.log(res.id);
+        console.log(`Toma por curioso: ${res.id}`);
       })
       .catch((e) => console.log(e));
   }

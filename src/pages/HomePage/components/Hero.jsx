@@ -101,7 +101,7 @@ function Hero({ openSection = false }) {
           <div className="grow"></div>
           <div>
             <h1
-              className="text-xl md:text-3xl lg:text-5xl font-righteous whitespace-nowrap  
+              className="text-2xl md:text-3xl lg:text-5xl font-righteous whitespace-nowrap  
             
             "
             >
@@ -109,8 +109,8 @@ function Hero({ openSection = false }) {
                 className="dark:bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] 
                 bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900
               dark:from-gray-900 dark:via-indigo-200 dark:to-gray-900
-              
-              
+          
+        
               bg-clip-text text-transparent"
               >
                 Hola, Soy Luis Ángel
@@ -118,12 +118,12 @@ function Hero({ openSection = false }) {
               👋🏽
             </h1>
             <h2 className="text-lg md:text-2xl lg:text-3xl font-mono">
-              Desarrollador web
+              Desarrollador Web
             </h2>
           </div>
           <p className="mx-auto">
-            +{calculateAge("01/01/2021")} años en el mundo del desarrollo de
-            software. Actualmente estoy enfocado en el desarrollo web.
+            +{calculateAge("01/01/2021")} años en el mundo del Desarrollo de
+            Software. Actualmente estoy enfocado en el Desarrollo Web.
           </p>
           <motion.a
             initial={{

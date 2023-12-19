@@ -27,8 +27,11 @@ function SectionProject({ project }) {
             {project.subtitle}
           </h3>
 
-          <p className="text-md lg:text-lg font-poppins ">
-            {project.description}
+          <p
+            dangerouslySetInnerHTML={{ __html: `${project.description}` }}
+            className="text-md lg:text-lg font-poppins "
+          >
+            {/* {project.description} */}
           </p>
         </div>
         {/* BADGES */}
@@ -41,12 +44,13 @@ function SectionProject({ project }) {
               <Badge
                 key={index}
                 index={index}
-                className={classForBadges[badge]}
+                className={classForBadges[badge.toLowerCase()]}
                 content={badge}
               />
             );
           })}
         </div>
+
         {/* Enlaces externos */}
         <div className="flex justify-center gap-5 items-center md:justify-start">
           <a

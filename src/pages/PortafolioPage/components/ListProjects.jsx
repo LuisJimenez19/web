@@ -138,8 +138,8 @@ function ListProjects({ projects, loading }) {
         })
       ) : (
         /* Si dejo de cargar y no hay proyectos */
-        <div>
-          Aún no hay proyectos con esas tecnoligías, estamos trabajando en ello
+        <div className="font-poppins text-lg">
+          Aún no hay proyectos con esas tecnologías, estamos trabajando en ello
           😉
         </div>
       )}

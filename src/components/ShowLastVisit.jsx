@@ -22,6 +22,15 @@ function ShowLastVisit() {
       (snap) => {
         const data = snap.docs;
         const lastVisit = data[0].data();
+        const penultimateVisit = data[1].data();
+
+        const isLastEmpty = $last.current.innerHTML === ""; // solo cuando es la primera vez, muestra la ubicación anterior
+
+        if (isLastEmpty) {
+          $last.current.innerHTML = `Última visita desde ${penultimateVisit.city}, ${penultimateVisit.country} ${penultimateVisit.flag}`;
+          // return;
+        }
+
         setMessage(
           `Última visita desde ${lastVisit.city}, ${lastVisit.country} ${lastVisit.flag}`
         );
@@ -61,7 +70,7 @@ function ShowLastVisit() {
   }, [message]);
 
   return (
-    <div className="flex flex-col   overflow-hidden h-6 absolute  top-1 md:top-auto md:left-1 md:bottom-1  text-center">
+    <div className="flex flex-col   overflow-hidden h-6 absolute  top-1 md:top-auto md:left-1 md:bottom-1  text-center md:text-left">
       <small ref={$last} className=" text-xs md:text-sm font-poppins"></small>
       <small ref={$next} className=" text-xs md:text-sm font-poppins"></small>
     </div>

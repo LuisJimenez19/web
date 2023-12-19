@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-function Badge({ content = "hello", className = "", index = 0 }) {
+function Badge({ content = "hello", className = "" }) {
   return (
     <span
       /* initial={{

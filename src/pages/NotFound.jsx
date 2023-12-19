@@ -3,7 +3,7 @@ import { DefaultLayout } from "../layouts/DefaultLayout";
 function NotFound() {
   return (
     <DefaultLayout>
-      <div className=" w-full  h-[80vh] flex place-content-center border items-center flex-col">
+      <div className=" w-full  h-[80vh] flex place-content-center  items-center flex-col">
         <h1
           className="font-bold text-[10em]
         bg-gradient-to-r from-linkedin to-wpp bg-clip-text text-transparent
