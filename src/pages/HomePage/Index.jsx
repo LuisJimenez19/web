@@ -56,9 +56,9 @@ function HomePage() {
 
           {/* FOOTER */}
           <div
-            className="flex justify-around items-center w-full
+            className="flex justify-around items-center w-full 
               h-[60px]  lg:h-[120px] lg:hover:h-[150px] shadow-[0_-2px_5px_-3px] max-h-[15pxpx] dark:shadow-sky-900  
-              animate-fade-up animate-duration-200 transition-all
+              animate-fade-up animate-duration-200 transition-all 
             "
           >
             <Link
@@ -71,9 +71,10 @@ function HomePage() {
               <span className="whitespace-nowrap font-bold ">Sobre mi</span>
             </Link>
             <button
+              aria-label="Muestra la seccion de contactos"
               className=" border border-dark-blue dark:border-light-cyan border-dashed p-2 hover:border-solid 
              hover:shadow-xl shadow-dark-grayish-blue hover:scale-110 transition-all
-             font-bold"
+             font-bold "
               onClick={() => {
                 setOpenSection((prev) => !prev);
               }}

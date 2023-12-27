@@ -22,7 +22,7 @@ export const socialIcons = [
       />
     ),
     link: "https://www.linkedin.com/in/luis-jim%C3%A9nez-90a859250/",
-    delay: 1000,
+    delay: 700,
     "arial-label": "Enlace a el perfil de Luis Angel JImenez en Linkedin.",
   },
   {
@@ -42,7 +42,7 @@ export const socialIcons = [
       />
     ),
     link: "https://www.frontendmentor.io/profile/LuisJimenez19",
-    delay: 700,
+    delay: 400,
     "arial-label":
       "Enlace a el perfil de Luis Angel JImenez en frontend mentor.",
   },
@@ -62,7 +62,7 @@ export const socialIcons = [
       />
     ),
     link: "https://github.com/LuisJimenez19",
-    delay: 400,
+    delay: 100,
     "arial-label": "Enlace a el perfil de Luis Angel JImenez en Git Hub.",
   },
   {
@@ -82,7 +82,7 @@ export const socialIcons = [
       />
     ),
     link: "mailto:luisjian948@gmail.com",
-    delay: 100,
+    delay: 0,
     "arial-label":
       "Enlace al servicio de correo electronico del usuario para enviar un correo a Luis Angel Jimenez",
   },

@@ -1,5 +1,4 @@
 import { DefaultLayout } from "../../layouts/DefaultLayout";
-import { motion } from "framer-motion";
 
 import { MyDescription } from "./components/MyDescription";
 
@@ -18,8 +17,8 @@ function AboutPage() {
 
   return (
     <DefaultLayout>
-      <motion.div
-        layout
+      <div
+        /*  layout
         key="PáginaAboutMe"
         initial={{
           translateY: "100%",
@@ -39,8 +38,10 @@ function AboutPage() {
         exit={{
           translateY: "100%",
           transitionDuration: "5s",
-        }}
-        className=" w-full h-full flex-grow flex  flex-col items-center "
+        }} */
+        className=" w-full h-full flex-grow flex  flex-col items-center 
+        animate-fade-up animate-duration-200 animate-ease-out bg-black/10
+        "
       >
         <h1 className="text-3xl lg:text-5xl  font-righteous">Sobre mí</h1>
 
@@ -52,8 +53,8 @@ function AboutPage() {
         >
           <div className="flex flex-col lg:flex-row gap-5 relative">
             {showVideo ? (
-              <motion.video
-                initial={{
+              <video
+                /*      initial={{
                   opacity: 0,
 
                   translateY: "10px",
@@ -62,14 +63,15 @@ function AboutPage() {
                   opacity: 1,
 
                   translateY: 0,
-                }}
+                }} */
                 height={400}
                 width={300}
                 autoPlay
-                className=" m-auto rounded-md shadow-2xl"
+                className=" m-auto rounded-md shadow-2xl animate-jump"
                 ref={videoRef}
                 src={urlVideo}
                 controls
+                aria-label="Video que describe la personalidad de Luis Angel Jimenez"
               />
             ) : (
               <MyDescription />
@@ -94,22 +96,24 @@ function AboutPage() {
                 etc...)
               </p>
               {showVideo && (
-                <motion.p
-                  initial={{
+                <p
+                  /*  initial={{
                     opacity: 0,
                     translateY: "-100%",
                   }}
                   animate={{
                     opacity: 1,
                     translateY: 0,
-                  }}
+                  }} */
+                  className="animate-fade-down"
                 >
                   Me gusta pasar tiempo con mis amigos, jugar al fulbol, la
                   calistenia, el café y hacerme cargo de las cosas que si puedo
                   controlar. 😉
-                </motion.p>
+                </p>
               )}
               <button
+                aria-label="Muestra u oculta el video que describe la personalidad de Luis Angel Jimenez"
                 onClick={toggleShowVideo}
                 className={`w-10 h-5 rounded-3xl absolute  shadow-inner bottom-2 right-0 
                 hover:brightness-110 hover:scale-95 border
@@ -118,7 +122,7 @@ function AboutPage() {
             </div>{" "}
           </div>
         </div>
-      </motion.div>
+      </div>
     </DefaultLayout>
   );
 }

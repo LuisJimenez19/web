@@ -29,7 +29,6 @@ function ShowLastVisit() {
 
           if (isLastEmpty && penultimateVisit.city !== lastVisit.city) {
             $last.current.innerHTML = `Última visita desde ${penultimateVisit.city}, ${penultimateVisit.country} ${penultimateVisit.flag}`;
-            // return;
           }
 
           setMessage(

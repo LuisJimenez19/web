@@ -130,6 +130,7 @@ function FormFilter({
                   {word}
 
                   <button
+                    aria-label="Añade la palabra a los filtros"
                     onClick={() => {
                       setSuggestion(
                         suggestion.filter((suggestion) => suggestion !== word)
@@ -169,6 +170,7 @@ function FormFilter({
                 }
               )}
               <button
+                aria-label="Elimina la palabra seleccionada"
                 onClick={() => {
                   deleteWordSelected(tec);
                 }}
@@ -182,6 +184,7 @@ function FormFilter({
 
         {words.length > 0 && (
           <button
+            aria-label="Limpia los filtros"
             onClick={resetAll}
             className="bg-react text-slate-900 font-righteous hover:bg-transparent hover:text-react border hover:border-react shadow-md rounded-md 
             

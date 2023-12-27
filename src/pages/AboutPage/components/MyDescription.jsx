@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { avatars } from "../utils/images";
-import { motion } from "framer-motion";
+
 import { calculateAge } from "../../../helpers/calculateAge";
 
 function MyDescription() {
@@ -12,7 +12,7 @@ function MyDescription() {
       setIndexCurrentImage((prev) => {
         return prev === last ? 0 : prev + 1;
       });
-    }, 3000);
+    }, 5000);
   }
 
   /*  useEffect(() => {
@@ -29,10 +29,9 @@ function MyDescription() {
 
   return (
     <div className="flex flex-col gap-3 min-h-[300px]  justify-center items-center">
-      <motion.img
-        key={avatars[indexCurrentImage].toString()} // clave única para que Framer Motion pueda aplicar la animación al cambiar la imagen
+      <img
         onLoad={() => changeImage()}
-        initial={{
+        /* initial={{
           opacity: 0,
           translateY: "10px",
         }}
@@ -46,9 +45,9 @@ function MyDescription() {
         }}
         transition={{
           duration: 0.5,
-        }}
+        }} */
         alt="Avatar de Luis Ángel Jimenez, el dueño de la web"
-        className="min-w-[300px]  min-h-[300px] h-full object-cover inline-block w-[300px]"
+        className="min-w-[300px]  min-h-[300px] h-full object-cover inline-block w-[300px] animate-fade-up animate-fill-both"
         src={avatars[indexCurrentImage]}
       />
       <code className="text-sm inline-block whitespace-nowrap">

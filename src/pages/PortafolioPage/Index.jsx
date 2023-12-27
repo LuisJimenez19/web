@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { motion } from "framer-motion";
+
 import { DefaultLayout } from "../../layouts/DefaultLayout";
 
 import { ListProjects } from "./components/ListProjects";
@@ -63,32 +63,16 @@ function PortafolioPage() {
   return (
     <DefaultLayout>
       {/* Animación de entreada */}
-      <motion.div
-        key="portafolio"
-        initial={{
-          translateX: "100%",
-          opacity: 0,
-        }}
-        animate={{
-          translateX: 0,
-          opacity: 1,
-          transitionDuration: ".15s",
-        }}
-        exit={{
-          translateX: "-100%",
-          transitionDuration: "5s",
-        }}
+      <div
         style={{
-          background: `linear-gradient(
-            90deg,
-            rgba(0, 0, 20, 0.2) 60%,
-            rgba(0, 0, 20, 0.2)
-          )`,
+          scrollbarGutter: "auto",
         }}
-        className="flex flex-grow flex-col pt-10 gap-5 w-full  "
+        className="flex flex-grow flex-col pt-10 gap-5 w-full
+        animate-portafolio bg-black/10
+        "
       >
-        <motion.h1
-          initial={{
+        <h1
+          /*  initial={{
             opacity: 1,
             translateX: -100,
           }}
@@ -98,11 +82,11 @@ function PortafolioPage() {
           }}
           transition={{
             delay: 0.2,
-          }}
-          className="text-center text-5xl font-righteous"
+          }} */
+          className="text-center text-5xl font-righteous animate-shake"
         >
           Proyectos destacados
-        </motion.h1>
+        </h1>
         {/* Filtrar proyectos por las tecnologías que usa */}
 
         {tecnologiesForFilter.length > 0 && (
@@ -114,7 +98,7 @@ function PortafolioPage() {
 
         {/* Proyectps */}
         <ListProjects projects={projects} loading={loading} />
-      </motion.div>
+      </div>
     </DefaultLayout>
   );
 }

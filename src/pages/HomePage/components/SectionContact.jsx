@@ -10,10 +10,11 @@ function SectionContact({ setOpenSection, openSection }) {
   return (
     <footer
       id="footerHomePage"
-      className={`transition-all shadow-black shadow-[0_-1px_10px] z-50 absolute  bottom-0 w-full bg-light-cyan dark:bg-dark-blue 
+      className={`transition-all shadow-black shadow-[0_-1px_10px] z-50 absolute  bottom-0 w-full  bg-light-cyan dark:bg-dark-blue
       ${openSection ? "h-[50vh] " : "h-0 overflow-hidden"}`}
     >
       <button
+        aria-label="Oculta la seccion de contactos"
         className=" block ml-auto mr-5 mt-3 active:scale-90 hover:scale-105 transition-all"
         onClick={() => {
           setOpenSection(false);

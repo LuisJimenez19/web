@@ -37,7 +37,8 @@
   pointer-events: none;
   position: absolute;
   inset: 0;
-  filter: blur(calc(var(--blur) * 1px));
+  filter: blur(50px);
+  /* filter: blur(calc(var(--blur) * 1px)); */
 }
 
 .glows::after,

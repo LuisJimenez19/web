@@ -37,7 +37,7 @@ function ListSocialMedia() {
           <li
             style={{ animationDelay: `${social.delay}ms` }}
             className={`${heigth > 600 ? "w-10 h-10" : "w-8 h-8 "} 
-            animate-jump-in animate-once animate-ease-in-out animate-duration-200
+            animate-fade-up animate-once animate-ease-in-out animate-duration-200
            
             `}
             key={social.link}

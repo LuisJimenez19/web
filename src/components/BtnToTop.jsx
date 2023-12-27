@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { ArrowTopIcon } from "../icons/Icons";
-import { motion } from "framer-motion";
+
 function BtnToTop({ className = "" }) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
     function showButton() {
-      if (window.scrollY > window.innerHeight) {
+      if (window.scrollY > window.innerHeight / 2) {
         setShow(true);
       } else {
         setShow(false);
@@ -21,25 +21,16 @@ function BtnToTop({ className = "" }) {
     };
   }, []);
 
-  const heigth = window.innerHeight;
-
-  if (!show) return;
-
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        scale: 0,
-      }}
-      animate={{
-        opacity: 1,
-        scale: 1,
-      }}
+    <div
       className={`
       bg-light-cyan p-2  rounded-full w-10 h-10 flex items-center justify-center
       hover:bg-dark-grayish-blue shadow-2xl border border-dark-grayish-blue hover:border-light-cyan
-      fixed bottom-2 right-2
-      group ${className}
+      fixed bottom-2 right-2  xl:right-24
+      group
+      ${show ? "" : "translate-y-full opacity-0 pointer-events-none"}
+      ${className}
+      transition-all
       `}
     >
       <a
@@ -52,7 +43,7 @@ function BtnToTop({ className = "" }) {
         "
         />
       </a>
-    </motion.div>
+    </div>
   );
 }
 

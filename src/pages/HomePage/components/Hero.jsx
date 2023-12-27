@@ -49,11 +49,11 @@ function Hero({ openSection = false }) {
       ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
       CARD.current.style.setProperty("--start", ANGLE + 90);
     };
-
-    document.body.addEventListener("pointermove", UPDATE);
+    const copyCard = CARD.current;
+    copyCard.addEventListener("pointermove", UPDATE);
 
     return () => {
-      document.body.removeEventListener("pointermove", UPDATE);
+      copyCard.removeEventListener("pointermove", UPDATE);
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -80,6 +80,7 @@ function Hero({ openSection = false }) {
             overflow-hidden relative
               `}
       >
+        <div className="glows"></div>
         {/* ---TEXTO--- */}
         <div
           /* initial={{
@@ -95,7 +96,6 @@ function Hero({ openSection = false }) {
           
           "
         >
-          <div className="grow"></div>
           <div>
             <h1
               className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-righteous whitespace-nowrap  leading-none

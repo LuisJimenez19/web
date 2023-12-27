@@ -10,6 +10,7 @@ function BtnBackHome({ className = "" }) {
 
   return (
     <button
+      aria-label="Envia a la principal"
       onClick={handleClick}
       className={`p-2 rounded-full bg-light-cyan w-10 flex h-10 items-center justify-center
       hover:bg-dark-grayish-blue animate-jump-in animate-duration-150

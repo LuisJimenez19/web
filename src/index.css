@@ -112,3 +112,39 @@ html {
     transform: translateY(-100%);
   }
 }
+
+/* ANIMATION FOR THE PAGES */
+
+.animate-portafolio {
+  animation: portafolio 200ms forwards ease-in-out;
+}
+
+@keyframes portafolio {
+  from {
+    opacity: 0;
+
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+.animate-skills {
+  animation: skills 200ms forwards ease-in-out;
+}
+
+@keyframes skills {
+  from {
+    opacity: 0;
+
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}

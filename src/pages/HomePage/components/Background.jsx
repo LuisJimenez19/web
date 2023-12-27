@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { motion } from "framer-motion";
 
 import unoImg from "../../../assets/images/uno.webp";
 
@@ -9,7 +8,7 @@ function Background({ className = "" }) {
       <p className="text-center dark:text-cyan-100 text-sm md:text-base font-poppins">
         Dejo esta foto porque soy barbaro
       </p>
-      <motion.img
+      <img
         className="w-[150px] "
         src={unoImg}
         alt="Imagen de uno, de los chicos del barrio"

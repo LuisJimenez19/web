@@ -4,7 +4,7 @@ import { APP_NAME } from "../config";
 
 function ThemeToggler() {
   const [darkMode, setDarkMode] = useState(() => {
-  /*   const preferesDarkMode = window.matchMedia(
+    /*   const preferesDarkMode = window.matchMedia(
       "(preferes-color-scheme: dark)"
     ).matches; */
 
@@ -29,6 +29,7 @@ function ThemeToggler() {
 
   return (
     <button
+      aria-label="Cambia de tema la pagina"
       className=" p-1 shadow-md shadow-dark-grayish-blue
       dark:shadow-sky-800
       rounded-lg hover:scale-110 hover:shadow-inner transition-all"

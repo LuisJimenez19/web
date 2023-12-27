@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 import { DefaultLayout } from "../../layouts/DefaultLayout";
 import { Fieldset } from "./components/Fieldset";
 
@@ -14,8 +12,8 @@ import {
 function SkillsPage() {
   return (
     <DefaultLayout>
-      <motion.div
-        initial={{
+      <div
+        /*   initial={{
           translateX: "-100%",
           opacity: 0,
         }}
@@ -33,8 +31,10 @@ function SkillsPage() {
         exit={{
           translateX: "-100%",
           transitionDuration: "5s",
-        }}
-        className=" w-full h-full flex-grow flex  flex-col items-center "
+        }} */
+        className=" w-full h-full flex-grow flex bg-black/10  flex-col items-center -translate-x-full
+        animate-skills
+        "
       >
         <h1 className="text-5xl lg:text-6xl  font-righteous">Habilidades</h1>
 
@@ -61,7 +61,7 @@ function SkillsPage() {
             </p>
           </section>
         </div>
-      </motion.div>
+      </div>
     </DefaultLayout>
   );
 }
