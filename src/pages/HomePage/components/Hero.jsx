@@ -8,6 +8,7 @@ import "../css/index.css";
 import { useEffect, useRef } from "react";
 import { ShowLastVisit } from "../../../components/ShowLastVisit";
 import { LinkGradient } from "../../../components/LinkGradient";
+import { useState } from "react";
 
 function Hero({ openSection = false }) {
   const CARD = useRef();
@@ -20,44 +21,61 @@ function Hero({ openSection = false }) {
     vertical: false,
     opacity: 0,
   };
+
+  const [widthPage, setWidthPage] = useState(window.innerWidth);
+
   useEffect(() => {
-    const UPDATE = (event) => {
-      // get the angle based on the center point of the card and pointer position
+    const resizePage = () => {
+      setWidthPage(window.innerWidth);
+    };
 
-      // Check the card against the proximity and then start updating
-      const CARD_BOUNDS = CARD?.current?.getBoundingClientRect();
-      // Get distance between pointer and outerbounds of card
-      if (
-        event?.x > CARD_BOUNDS.left - CONFIG.proximity &&
-        event?.x < CARD_BOUNDS.left + CARD_BOUNDS.width + CONFIG.proximity &&
-        event?.y > CARD_BOUNDS.top - CONFIG.proximity &&
-        event?.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
-      ) {
-        // If within proximity set the active opacity
-        CARD.current.style.setProperty("--active", 1);
-      } else {
-        CARD.current.style.setProperty("--active", CONFIG.opacity);
+    window.addEventListener("resize", resizePage);
+
+    return () => window.removeEventListener("resize", resizePage);
+  }, []);
+
+  useEffect(() => {
+    if (widthPage > 767) {
+      const UPDATE = (event) => {
+        // get the angle based on the center point of the card and pointer position
+
+        // Check the card against the proximity and then start updating
+        const CARD_BOUNDS = CARD?.current?.getBoundingClientRect();
+        // Get distance between pointer and outerbounds of card
+        if (
+          event?.x > CARD_BOUNDS.left - CONFIG.proximity &&
+          event?.x < CARD_BOUNDS.left + CARD_BOUNDS.width + CONFIG.proximity &&
+          event?.y > CARD_BOUNDS.top - CONFIG.proximity &&
+          event?.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
+        ) {
+          // If within proximity set the active opacity
+          CARD.current.style.setProperty("--active", 1);
+        } else {
+          CARD.current.style.setProperty("--active", CONFIG.opacity);
+        }
+        const CARD_CENTER = [
+          CARD_BOUNDS.left + CARD_BOUNDS.width * 0.5,
+          CARD_BOUNDS.top + CARD_BOUNDS.height * 0.5,
+        ];
+        let ANGLE =
+          (Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) *
+            180) /
+          Math.PI;
+        ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
+        CARD.current.style.setProperty("--start", ANGLE + 90);
+      };
+      const copyCard = CARD.current;
+      if (copyCard) {
+        copyCard.addEventListener("pointermove", UPDATE);
+
+        return () => {
+          copyCard.removeEventListener("pointermove", UPDATE);
+        };
       }
-      const CARD_CENTER = [
-        CARD_BOUNDS.left + CARD_BOUNDS.width * 0.5,
-        CARD_BOUNDS.top + CARD_BOUNDS.height * 0.5,
-      ];
-      let ANGLE =
-        (Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) *
-          180) /
-        Math.PI;
-      ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
-      CARD.current.style.setProperty("--start", ANGLE + 90);
-    };
-    const copyCard = CARD.current;
-    copyCard.addEventListener("pointermove", UPDATE);
-
-    return () => {
-      copyCard.removeEventListener("pointermove", UPDATE);
-    };
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [widthPage]);
 
   return (
     <section
@@ -123,21 +141,6 @@ function Hero({ openSection = false }) {
             Software. Actualmente estoy enfocado en el Desarrollo Web.
           </p>
 
-          {/*  <a
-            href="https://drive.google.com/file/d/1mqjR4KkoGE3p9A-ASof1j4sWXWbJ3GbU/view?usp=sharing"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="border-linkedin border text-linkedin 
-                    dark:border-slate-100 dark:text-slate-50
-                    hover:text-slate-50 hover:bg-linkedin hover:border-slate-50
-                    dark:hover:bg-slate-50 dark:hover:text-linkedin dark:hover:border-linkedin hover:scale-95 transition-all
-            w-max py-2 px-3 rounded-xl text-sm self-center md:self-start  mb-2 
-            animate-fade-down animate-once animate-ease-in animate-duration-200 animate-delay-300
-            "
-          >
-            {" "}
-            Descargar CV
-          </a> */}
           <LinkGradient
             className="animate-fade-down animate-ease-out"
             aria-label="Envia a un documento de google drive en donde esta el curriculum vitae de Luis Ángel Jimenez "
@@ -149,13 +152,12 @@ function Hero({ openSection = false }) {
         </div>
 
         {/* IMAGEN */}
-        <section className="flex w-full items-center justify-center">
+        <section className="flex w-full items-center justify-center ">
           {/* DETRAS DE LA FOTO */}
           <Background className={"absolute "} />
 
           <motion.div
-            className="align-bottom flex md:items-center items-end justify-center cursor-grab active:cursor-grabbing relative  
-             
+            className="align-bottom flex md:items-center items-end justify-center cursor-grab active:cursor-grabbing relative  w-full h-full min-w-[202px] min-h-[269px]  max-w-[390px] max-h-[520px]
                 dark:bg-dark-blue
                   bg-slate-300
                   shadow-xl
@@ -171,6 +173,7 @@ function Hero({ openSection = false }) {
             }}
           >
             <img
+              alt="Foto animada de Luis Angel Jimenes"
               className=" w-full md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] block pointer-events-none 
               animate-fade-up
               "
