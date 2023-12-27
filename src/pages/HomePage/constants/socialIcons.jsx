@@ -8,6 +8,25 @@ import {
 export const socialIcons = [
   {
     icon: (
+      <LikedinIcon
+        className="
+        w-full h-full rounded-full
+      p-1 
+      cursor-pointer
+      border-gray-500
+      stroke-gray-500 hover:stroke-[#fff] border
+       dark:hover:border-[#fff]
+      hover:border-black shadow-lg
+      hover:bg-[#0a66c2]
+       transition-all"
+      />
+    ),
+    link: "https://www.linkedin.com/in/luis-jim%C3%A9nez-90a859250/",
+    delay: 1000,
+    "arial-label": "Enlace a el perfil de Luis Angel JImenez en Linkedin.",
+  },
+  {
+    icon: (
       <FrontendMentorIcon
         className="
       w-full h-full rounded-full
@@ -23,7 +42,9 @@ export const socialIcons = [
       />
     ),
     link: "https://www.frontendmentor.io/profile/LuisJimenez19",
-    delay: 0.7,
+    delay: 700,
+    "arial-label":
+      "Enlace a el perfil de Luis Angel JImenez en frontend mentor.",
   },
   {
     icon: (
@@ -41,7 +62,8 @@ export const socialIcons = [
       />
     ),
     link: "https://github.com/LuisJimenez19",
-    delay: 0.5,
+    delay: 400,
+    "arial-label": "Enlace a el perfil de Luis Angel JImenez en Git Hub.",
   },
   {
     icon: (
@@ -60,24 +82,8 @@ export const socialIcons = [
       />
     ),
     link: "mailto:luisjian948@gmail.com",
-    delay: 0.4,
-  },
-  {
-    icon: (
-      <LikedinIcon
-        className="
-        w-full h-full rounded-full
-      p-1 
-      cursor-pointer
-      border-gray-500
-      stroke-gray-500 hover:stroke-[#fff] border
-       dark:hover:border-[#fff]
-      hover:border-black shadow-lg
-      hover:bg-[#0a66c2]
-       transition-all"
-      />
-    ),
-    link: "https://www.linkedin.com/in/luis-jim%C3%A9nez-90a859250/",
-    delay: 0.3,
+    delay: 100,
+    "arial-label":
+      "Enlace al servicio de correo electronico del usuario para enviar un correo a Luis Angel Jimenez",
   },
 ];

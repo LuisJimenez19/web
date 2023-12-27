@@ -31,4 +31,14 @@
 
     <script type="module" src="/src/main.jsx"></script>
   </body>
+
+  <script>
+    const darkMode = localStorage.getItem(`dark-mode-angel-web`) || "dark";
+
+    if (darkMode === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
 </html>

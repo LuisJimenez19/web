@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { ThemeToggler } from "./ThemeToggler";
 import { BtnBackHome } from "./BtnBackHome";
-import { ShowLastVisit } from "./ShowLastVisit";
 
 function Header() {
   const { pathname } = useLocation();
@@ -11,7 +10,9 @@ function Header() {
       <div className="w-[90%]  mx-auto flex items-center justify-between ">
         <div className="logo">
           <p className="text-2xl lg:text-5xl font-bold drop-shadow-2xl">
-            <Link to={"/"}>JIMENEZ</Link>
+            <Link aria-label="Enlace al home del portafolio" to={"/"}>
+              JIMENEZ
+            </Link>
           </p>
         </div>
 

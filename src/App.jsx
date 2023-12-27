@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { NotFound } from "./pages/NotFound";
 /* FRAMER MOTION */
-import { AnimatePresence } from "framer-motion";
+
 import { AboutPage } from "./pages/AboutPage/Index";
 import { PortafolioPage } from "./pages/PortafolioPage/Index";
 import { BtnToTop } from "./components/BtnToTop";
@@ -86,19 +86,10 @@ function App() {
   });
 
   return (
-    <div
-      className="
-    bg-light-cyan dark:bg-dark-blue 
-    w-full min-h-screen overflow-hidden 
-    text-dark-grayish-blue dark:text-light-cyan
-    transition-all 
-    "
-    >
-      <AnimatePresence mode="wait">
-        <RouterProvider router={router} />
-        <BtnToTop />
-      </AnimatePresence>
-    </div>
+    <>
+      <RouterProvider router={router} />
+      <BtnToTop />
+    </>
   );
 }
 

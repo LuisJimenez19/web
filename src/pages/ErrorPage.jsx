@@ -1,3 +1,4 @@
+import { LinkGradient } from "../components/LinkGradient";
 import { DefaultLayout } from "../layouts/DefaultLayout";
 
 function ErrorPage() {
@@ -15,17 +16,8 @@ function ErrorPage() {
           <span className="text-[5em]">😲</span>
         </div>
         <p className="font-poppins text-xl">Ha ocurrido un error inesperado</p>
-        <a
-          className="border-linkedin border-b text-linkedin 
-        dark:border-slate-100 dark:text-slate-50
-        hover:text-slate-50 hover:bg-linkedin hover:border-slate-50
-        dark:hover:bg-slate-50 dark:hover:text-linkedin dark:hover:border-linkedin hover:scale-95 transition-all 
-        w-max py-2  px-3 rounded-xl text-sm  
-        "
-          href="/"
-        >
-          Volver al inicio
-        </a>
+
+        <LinkGradient aria-label="Enlace al home del portafolio" href={"/"} text="Volver al inicio" />
       </div>
     </DefaultLayout>
   );

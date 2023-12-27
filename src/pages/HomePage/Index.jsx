@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+
 import { DefaultLayout } from "../../layouts/DefaultLayout";
 
 import { Hero } from "./components/Hero";
@@ -12,16 +12,12 @@ function HomePage() {
 
   return (
     <DefaultLayout>
-      <motion.div
-        initial={{ opacity: 0, transformBox: "view-box" }}
-        animate={{ opacity: 1, transitionDuration: ".2s" }}
-        exit={{ opacity: 0 }}
-        className={`flex-grow flex  home-page `}
-      >
+      <div className={`flex-grow flex  home-page `}>
         {/* Link a la página habilidades */}
         {/* <---------IZQUIERDA------------> */}
-        <motion.div
-          initial={{
+
+        <div
+          /*  initial={{
             opacity: 0,
             translateX: "-100%",
           }}
@@ -30,52 +26,43 @@ function HomePage() {
             translateX: 0,
             transitionDuration: ".1s",
             transitionDelay: "50ms",
-          }}
+          }} */
           className="grid place-content-center hover:w-[70px] w-[60px]
-          lg:w-[120px] lg:hover:w-[130px] shadow-lg  dark:shadow-sky-900   "
+          lg:w-[120px] lg:hover:w-[130px] shadow-lg  dark:shadow-sky-900 transition-all animate-fade-right animate-duration-100
+          
+          "
         >
           <Link
+            aria-label="Enlace a las habilidades de Luis Angel Jimenez"
             to={"/skills"}
             className=" border border-dark-blue dark:border-light-cyan border-dashed p-2 hover:border-solid 
             hover:shadow-xl shadow-dark-grayish-blue hover:scale-110
             transition-all
-            
+              
             
             shadow-md -rotate-90"
           >
-            <span className="whitespace-nowrap font-bold">
-              Habilidades 
-            </span>
+            <span className="whitespace-nowrap font-bold">Habilidades</span>
           </Link>
-        </motion.div>
+        </div>
         {/* <---------CENTRO------------> */}
+
         <div
-          className={`flex flex-col items-center justify-center flex-grow
+          className={`flex flex-col items-center justify-center w-[90%]  overflow-hidden
             relative home-page__center ${openSection ? "active" : ""}`}
         >
           {/* CARD */}
           <Hero openSection={openSection} />
 
           {/* FOOTER */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              translateY: "100%",
-            }}
-            animate={{
-              opacity: 1,
-              translateY: 0,
-              transitionDuration: ".1s",
-              transitionDelay: "80ms",
-            }}
-            transition={{
-              delay: 0.2,
-            }}
+          <div
             className="flex justify-around items-center w-full
-              h-[60px] lg:h-[120px] lg:hover:h-[150px] shadow-[0_-2px_5px_-3px] max-h-[15pxpx] dark:shadow-sky-900  
+              h-[60px]  lg:h-[120px] lg:hover:h-[150px] shadow-[0_-2px_5px_-3px] max-h-[15pxpx] dark:shadow-sky-900  
+              animate-fade-up animate-duration-200 transition-all
             "
           >
             <Link
+              aria-label="Enlace a la informacion de Luis Angel Jimenez"
               to={"/about"}
               className=" border border-dark-blue dark:border-light-cyan border-dashed p-2 hover:border-solid 
             hover:shadow-xl shadow-dark-grayish-blue hover:scale-110
@@ -85,15 +72,15 @@ function HomePage() {
             </Link>
             <button
               className=" border border-dark-blue dark:border-light-cyan border-dashed p-2 hover:border-solid 
-             hover:shadow-xl shadow-dark-grayish-blue hover:scale-110
-             transition-all font-bold"
+             hover:shadow-xl shadow-dark-grayish-blue hover:scale-110 transition-all
+             font-bold"
               onClick={() => {
                 setOpenSection((prev) => !prev);
               }}
             >
               Contacto
             </button>
-          </motion.div>
+          </div>
 
           {/* Section Contacto */}
           <SectionContact
@@ -104,8 +91,8 @@ function HomePage() {
 
         {/* <---------DERECHA------------> */}
         {/* Link a la página portafolio */}
-        <motion.div
-          initial={{
+        <div
+          /*  initial={{
             opacity: 0,
             translateX: "100%",
           }}
@@ -114,26 +101,28 @@ function HomePage() {
             translateX: 0,
             transitionDuration: ".1s",
             transitionDelay: "50ms",
-          }}
-          className="grid place-content-center hover:w-[70px]   w-[60px] 
-          lg:w-[120px] lg:hover:w-[130px] shadow-lg  dark:shadow-sky-900  
+          }} */
+
+          className="grid place-content-center hover:w-[70px]  w-[60px] 
+          lg:w-[120px] lg:hover:w-[130px] shadow-lg transition-all relative  dark:shadow-sky-900
+          animate-fade-left animate-duration-200
           "
         >
           <Link
+            aria-label="Enlace al portafolio y los trabajos hechos de Luis Angel Jimenez"
             to={"/portafolio"}
             className=" border border-dark-blue dark:border-light-cyan border-dashed p-2 hover:border-solid 
             hover:shadow-xl shadow-dark-grayish-blue hover:scale-110
-            transition-all
-         
-            rotate-90"
+            transition-all rotate-90 "
           >
             <span className=" whitespace-nowrap font-bold ">
               Portafolio | Trabajo
             </span>
           </Link>
+
           <ListSocialMedia />
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </DefaultLayout>
   );
 }

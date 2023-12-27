@@ -27,7 +27,6 @@ function BtnToTop({ className = "" }) {
 
   return (
     <motion.div
-      
       initial={{
         opacity: 0,
         scale: 0,
@@ -43,7 +42,10 @@ function BtnToTop({ className = "" }) {
       group ${className}
       `}
     >
-      <a href="#">
+      <a
+        aria-label="Vuelve al arriba de todo para mostrar la parte superior del documento"
+        href="#"
+      >
         <ArrowTopIcon
           className="stroke-dark-blue
         group-hover:stroke-light-cyan

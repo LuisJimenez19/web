@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { motion } from "framer-motion";
+
 import { HomeIcon } from "../icons/Icons";
 import { useNavigate } from "react-router-dom";
 function BtnBackHome({ className = "" }) {
@@ -9,18 +9,10 @@ function BtnBackHome({ className = "" }) {
   }
 
   return (
-    <motion.button
-      initial={{
-        opacity: 0,
-        scale: 0,
-      }}
-      animate={{
-        opacity: 1,
-        scale: 1,
-      }}
+    <button
       onClick={handleClick}
       className={`p-2 rounded-full bg-light-cyan w-10 flex h-10 items-center justify-center
-      hover:bg-dark-grayish-blue 
+      hover:bg-dark-grayish-blue animate-jump-in animate-duration-150
       backdrop-filter shadow-lg  group transition-all ${className}`}
     >
       <HomeIcon
@@ -28,7 +20,7 @@ function BtnBackHome({ className = "" }) {
         group-hover:stroke-light-cyan
         "
       />
-    </motion.button>
+    </button>
   );
 }
 
