@@ -157,7 +157,13 @@ function Hero({ openSection = false }) {
           <Background className={"absolute "} />
 
           <motion.div
-            className="align-bottom flex md:items-center items-end justify-center cursor-grab active:cursor-grabbing relative  w-full h-full min-w-[202px] min-h-[269px]  max-w-[390px] max-h-[520px]
+            className="align-bottom flex md:items-center items-end justify-center cursor-grab active:cursor-grabbing relative  
+            w-[220px] h-[293px] 
+            sm:w-[360px] sm:h-[500px]
+            lg:w-[390px] lg:h-[520px]
+
+             max-w-[390px] max-h-[520px]
+           
                 dark:bg-dark-blue
                   bg-slate-300
                   shadow-xl
@@ -173,7 +179,10 @@ function Hero({ openSection = false }) {
             }}
           >
             <img
-              alt="Foto animada de Luis Angel Jimenes"
+              width="100%"
+              height="100%"
+              className="border w-full h-full"
+              alt="Foto animada de Luis Angel Jimenez"
               className=" w-full md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] block pointer-events-none 
               animate-fade-up
               "
