@@ -37,4 +37,4 @@ function Fieldset({ skills = [], legend = "", className = "" }) {
   );
 }
 
-export { Fieldset };
+export default Fieldset;

@@ -1,5 +1,7 @@
+import { lazy } from "react";
 import { DefaultLayout } from "../../layouts/DefaultLayout";
-import { Fieldset } from "./components/Fieldset";
+// import { Fieldset } from "./components/Fieldset";
+const Fieldset = lazy(() => import("./components/Fieldset"));
 
 import {
   personalQualities,

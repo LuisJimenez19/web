@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef, useState, Suspense, lazy } from "react";
+import { useEffect, useRef, useState, lazy } from "react";
 
 import { DefaultLayout } from "../../layouts/DefaultLayout";
 
@@ -64,18 +64,18 @@ function PortafolioPage() {
   return (
     <DefaultLayout>
       {/* // TODO: mejorar el fallback */}
-      <Suspense fallback={<div>Hola</div>}>
-        {/* Animación de entreada */}
-        <div
-          style={{
-            scrollbarGutter: "auto",
-          }}
-          className="flex flex-grow flex-col pt-10 gap-5 w-full
+
+      {/* Animación de entreada */}
+      <div
+        style={{
+          scrollbarGutter: "auto",
+        }}
+        className="flex flex-grow flex-col pt-10 gap-5 w-full
         animate-portafolio bg-black/10
         "
-        >
-          <h1
-            /*  initial={{
+      >
+        <h1
+          /*  initial={{
             opacity: 1,
             translateX: -100,
           }}
@@ -86,23 +86,22 @@ function PortafolioPage() {
           transition={{
             delay: 0.2,
           }} */
-            className="text-center text-5xl font-righteous animate-shake"
-          >
-            Proyectos destacados
-          </h1>
-          {/* Filtrar proyectos por las tecnologías que usa */}
+          className="text-center text-5xl font-righteous animate-shake"
+        >
+          Proyectos destacados
+        </h1>
+        {/* Filtrar proyectos por las tecnologías que usa */}
 
-          {tecnologiesForFilter.length > 0 && (
-            <FormFilter
-              tecnologiesForFilter={tecnologiesForFilter}
-              filterForTecnologies={filterForTecnologies}
-            />
-          )}
+        {tecnologiesForFilter.length > 0 && (
+          <FormFilter
+            tecnologiesForFilter={tecnologiesForFilter}
+            filterForTecnologies={filterForTecnologies}
+          />
+        )}
 
-          {/* Proyectps */}
-          <ListProjects projects={projects} loading={loading} />
-        </div>
-      </Suspense>
+        {/* Proyectps */}
+        <ListProjects projects={projects} loading={loading} />
+      </div>
     </DefaultLayout>
   );
 }
