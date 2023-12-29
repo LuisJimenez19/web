@@ -2,6 +2,7 @@
 
 {
     "projects": [
+      
       {
         "images": [
           "/mockups/recicanje_desktop.webp",
@@ -15,7 +16,7 @@
         ],
         "name": "Recicanje",
         "subtitle": "Red Social",
-        "description": "Red social construida con Astro que permite operaciones CRUD para los usuarios, publicaciones y comentarios. Además, implementa un chat en tiempo real para los usuarios que se agreguen como contactos.</br> Como backend, utiliza la API Endpoint del mismo framework para conectarse con MongoDB y Firebase Admin. En el frontend, emplea componentes de Astro y de React. <small>Este proyecto es un trabajo universitario con la finalidad de crear una comunidad que promueva la cultura del reciclaje y la economía circular.</small>",
+        "description": "<p>Red social construida con Astro que permite operaciones CRUD para los usuarios, publicaciones y comentarios. Además, implementa un chat en tiempo real para los usuarios que se agreguen como contactos.</p><p>Como backend, utiliza la API Endpoint del mismo framework para conectarse con MongoDB y Firebase Admin. En el frontend, emplea componentes de Astro y de React.</p> <p><small>Este proyecto es un trabajo universitario con la finalidad de crear una comunidad que promueva la cultura del reciclaje y la economía circular.</small></p>",
         "linkDemo": "https://recicanje.vercel.app/",
         "badges": [
           "html",
@@ -26,6 +27,31 @@
           "astro",
           "mongoDB",
           "firebase"
+        ]
+      },
+
+      {
+        "images": [
+          "/mockups/jn_desktop.webp",
+          "/mockups/jn2_desktop.webp",
+          "/mockups/jn3_desktop.webp",
+          
+          "/mockups/jn_mobile.webp",
+          "/mockups/jn2_mobile.webp",
+          "/mockups/jn3_mobile.webp"
+         
+        ],
+        "name": "JN Entrenamientos",
+        "subtitle": "Palataforma de entrenamientos personalizados",
+        "description": "<p>Plataforma construida con Laravel, Inertia, React y MySql. En este proyecto solo trabaje en la parte del front-end, con react y tailwind.</p> <p>Tuve la oportunidad de aprender un poco como Inertia integra muy bien React al stack de Laravel permitiendo renderización del lado del servidor sin sacrificar la comodidad del desarrollo de SPA.</p><p><small>Esta es una DEMO de la landing page de la plataforma, acutalmente estamos trabajando en ella.</small></p>",
+        "linkDemo": "https://demo-jn-entrenamientos.netlify.app/",
+        "badges": [
+          "php",
+          "laravel",
+          "react",
+          "tailwind",
+          "javaScript",
+          "mySql"
         ]
       },
       {
@@ -41,7 +67,7 @@
         ],
         "name": "Gestión de pagos",
         "subtitle": "Equipo de fútbol",
-        "description": "Gestión de pagos para un equipo de fútbol que permite a los administradores realizar operaciones CRUD de jugadores, servicios y aceptar o rechazar pagos. Cada jugador y administrador puede ver sus movimientos. </br> Esta es una aplicación fullstack con backend en Node.js + Express, MySQL como gestor de la base de datos y frontend en React con Tailwind CSS + Vite.js. En este proyecto, se incorporaron servicios de Firebase, como Cloud Messaging para notificaciones en tiempo real y el almacenamiento para guardar las imágenes de los jugadores. Además, se implementó autenticación con JWT, roles para cada tipo de usuario y Firebase Admin para que el backend sea administrador de los servicios de Firebase.",
+        "description": "<p>Gestión de pagos para un equipo de fútbol que permite a los administradores realizar operaciones CRUD de jugadores, servicios y aceptar o rechazar pagos. Cada jugador y administrador puede ver sus movimientos.</p><p>Esta es una aplicación fullstack con backend en Node.js + Express, MySQL como gestor de la base de datos y frontend en React con Tailwind CSS + Vite.js. En este proyecto, se incorporaron servicios de Firebase, como Cloud Messaging para notificaciones en tiempo real y el almacenamiento para guardar las imágenes de los jugadores. Además, se implementó autenticación con JWT, roles para cada tipo de usuario y Firebase Admin para que el backend sea administrador de los servicios de Firebase.</p>",
         "linkDemo": "https://gestion-real.netlify.app/",
         "badges": [
           "javaScript",
@@ -64,7 +90,7 @@
         ],
         "name": "Taskify",
         "subtitle": "Aplicación de productividad",
-        "description": "Todo Task que permite las operaciones CRUD de usuarios y sus tareas, también muestra las estadísticas de cada usuario con respecto a sus tareas. </br> Es una aplicación fullstack con backend en Node.js + Express, MySQL como gestor de la base de datos y frontend en React con CUSTOM CSS + Vite.js. En esta ocasión, se implementó JWT para la autenticación. Además, en el frontend se incorporaron APIs de terceros para agregar más funcionalidades.",
+        "description": "<p>Todo Task que permite las operaciones CRUD de usuarios y sus tareas, también muestra las estadísticas de cada usuario con respecto a sus tareas.</p><p>Es una aplicación fullstack con backend en Node.js + Express, MySQL como gestor de la base de datos y frontend en React con CUSTOM CSS + Vite.js. En esta ocasión, se implementó JWT para la autenticación. Además, en el frontend se incorporaron APIs de terceros para agregar más funcionalidades.</p>",
         "linkGithub": "https://github.com/LuisJimenez19/app-fullstack",
         "linkDemo": "https://taskifyap.netlify.app/",
         "badges": [
@@ -87,7 +113,7 @@
         ],
         "name": "Rompebezacas",
         "subtitle": "Juego de puzzle con un sistema de ranking",
-        "description": "Juego que permite crear una cuenta, elegir dificultad, jugar e implementa un sistema de ranking. </br> Este proyecto está desarrollado con React + Tailwind y empaquetado con Vite.js. Como backend, utiliza Firebase y Firestore como base de datos para guardar la información y el puntaje de los usuarios.",
+        "description": "<p>Juego que permite crear una cuenta, elegir dificultad, jugar e implementa un sistema de ranking.</p> <p> Este proyecto está desarrollado con React + Tailwind y empaquetado con Vite.js. Como backend, utiliza Firebase y Firestore como base de datos para guardar la información y el puntaje de los usuarios.</p>",
         "linkGithub": "https://github.com/LuisJimenez19/rompebezacas",
         "linkDemo": "https://rompebezacas.netlify.app/",
         "badges": [
@@ -105,7 +131,7 @@
         ],
         "name": "Portafolio",
         "subtitle": "Desafíos Frontend Mentor",
-        "description": "Portafolio de soluciones a desafíos de <a class='underline'  href='https://www.frontendmentor.io/profile/LuisJimenez19' target='_blank' rel='noreferrer nofollow' ><strong>Frontend Mentor</strong></a>, hecho con las tres tecnologías base de la web. Encontrarás proyectos interesantes.",
+        "description": "<p>Portafolio de soluciones a desafíos de <a class='underline opacity-80'  href='https://www.frontendmentor.io/profile/LuisJimenez19' target='_blank' rel='noreferrer nofollow' ><strong>Frontend Mentor</strong></a>, hecho con las tres tecnologías base de la web. Encontrarás proyectos interesantes.</p>",
         "linkGithub": "https://github.com/LuisJimenez19/desafios-frontend-mentor",
         "linkDemo": "https://luisjimenez19.github.io/desafios-frontend-mentor/index.html",
         "badges": [

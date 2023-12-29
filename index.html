@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <!-- <link rel="icon" type="image/svg+xml" href="/lemillionV.jpeg" /> -->
-    <link rel="icon" type="image/svg+xml" href="/power-shell.png" />
+    <link rel="icon" type="image/svg+xml" href="/power-shell.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!--  <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Poppins:wght@300;600&family=Righteous&display=swap"
       rel="stylesheet"
-    />
+    /> -->
 
     <meta
       name="description"
@@ -34,11 +34,6 @@
 
   <script>
     const darkMode = localStorage.getItem(`dark-mode-angel-web`) || "dark";
-
-    if (darkMode === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle(darkMode);
   </script>
 </html>

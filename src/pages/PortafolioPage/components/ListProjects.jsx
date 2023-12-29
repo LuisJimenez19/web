@@ -147,4 +147,4 @@ function ListProjects({ projects, loading }) {
   );
 }
 
-export { ListProjects };
+export default ListProjects;

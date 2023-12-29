@@ -27,8 +27,8 @@ function HomePage() {
             transitionDuration: ".1s",
             transitionDelay: "50ms",
           }} */
-          className="grid place-content-center hover:w-[70px] w-[60px]
-          lg:w-[120px] lg:hover:w-[130px] shadow-lg  dark:shadow-sky-900 transition-all animate-fade-right animate-duration-100
+          className="grid place-content-center  w-[60px]
+          lg:w-[120px]  shadow-lg  dark:shadow-sky-900 transition-all animate-fade-right animate-duration-100
           
           "
         >
@@ -57,15 +57,15 @@ function HomePage() {
           {/* FOOTER */}
           <div
             className="flex justify-around items-center w-full 
-              h-[60px]  lg:h-[120px] lg:hover:h-[150px] shadow-[0_-2px_5px_-3px] max-h-[15pxpx] dark:shadow-sky-900  
+              h-[60px]  lg:h-[120px]  shadow-[0_-2px_5px_-3px] max-h-[15pxpx] dark:shadow-sky-900  
               animate-fade-up animate-duration-200 transition-all 
             "
           >
             <Link
-              aria-label="Enlace a la informacion de Luis Angel Jimenez"
+              aria-label="Enlace que envia a la página que contiene la información de Luis Ángel Jimenez"
               to={"/about"}
               className=" border border-dark-blue dark:border-light-cyan border-dashed p-2 hover:border-solid 
-            hover:shadow-xl shadow-dark-grayish-blue hover:scale-110
+            hover:shadow-xl shadow-dark-grayish-blue hover:scale-110z
             transition-all "
             >
               <span className="whitespace-nowrap font-bold ">Sobre mi</span>
@@ -104,13 +104,13 @@ function HomePage() {
             transitionDelay: "50ms",
           }} */
 
-          className="grid place-content-center hover:w-[70px]  w-[60px] 
-          lg:w-[120px] lg:hover:w-[130px] shadow-lg transition-all relative  dark:shadow-sky-900
+          className="grid place-content-center   w-[60px] 
+          lg:w-[120px]  shadow-lg transition-all relative  dark:shadow-sky-900
           animate-fade-left animate-duration-200
           "
         >
           <Link
-            aria-label="Enlace al portafolio y los trabajos hechos de Luis Angel Jimenez"
+            aria-label="Enlace que envia a la página del portafolio y los trabajos hechos de Luis Angel Jimenez"
             to={"/portafolio"}
             className=" border border-dark-blue dark:border-light-cyan border-dashed p-2 hover:border-solid 
             hover:shadow-xl shadow-dark-grayish-blue hover:scale-110

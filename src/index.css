@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "poppins";
+  src: url(/src/fonts/Poppins-Light.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "righteous";
+  src: url(/src/fonts/Righteous-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "yatraOne";
+  src: url(/src/fonts/YatraOne-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -147,4 +168,11 @@ html {
 
     transform: translateX(0);
   }
+}
+
+/* Parrafor que estan dentro de la descripción de los proyectos */
+div.text-description-proyect p {
+  line-height: normal;
+  margin-bottom: 5px;
+ 
 }

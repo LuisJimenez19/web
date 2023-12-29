@@ -10,4 +10,6 @@ export const classForBadges = {
   firebase: "bg-firebase border border-firebase hover:text-firebase",
   astro: "bg-astro border border-astro hover:text-astro",
   mongodb: "bg-mongodb border border-mongodb hover:text-mongodb",
+  php: "bg-php border border-php hover:text-php",
+  laravel: "bg-laravel border border-laravel hover:text-laravel",
 };

@@ -35,6 +35,7 @@ export default {
       fontFamily: {
         poppins: "poppins",
         righteous: "righteous",
+        yatraOne: "yatraOne",
       },
     },
   },

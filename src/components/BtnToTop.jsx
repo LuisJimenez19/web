@@ -26,7 +26,7 @@ function BtnToTop({ className = "" }) {
       className={`
       bg-light-cyan p-2  rounded-full w-10 h-10 flex items-center justify-center
       hover:bg-dark-grayish-blue shadow-2xl border border-dark-grayish-blue hover:border-light-cyan
-      fixed bottom-2 right-2  xl:right-24
+      fixed bottom-10 right-2  xl:right-24
       group
       ${show ? "" : "translate-y-full opacity-0 pointer-events-none"}
       ${className}

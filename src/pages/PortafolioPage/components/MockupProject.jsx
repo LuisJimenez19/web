@@ -37,7 +37,7 @@ function MockupProject({ project }) {
       {loadingImage && <SkeletonImage />}
 
       <figure
-        className={`  flex-col  items-center  flex-1 fade-in ${
+        className={`flex-col  items-center  flex-1 fade-in ${
           loadingImage ? "opacity-0 absolute" : "relative flex"
         } `}
       >

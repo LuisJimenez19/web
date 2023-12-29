@@ -27,12 +27,12 @@ function SectionProject({ project }) {
             {project.subtitle}
           </h3>
 
-          <p
+          <div
             dangerouslySetInnerHTML={{ __html: `${project.description}` }}
-            className="text-md lg:text-lg font-poppins "
+            className="text-sm sm:text-base  font-poppins text-description-proyect"
           >
             {/* {project.description} */}
-          </p>
+          </div>
         </div>
         {/* BADGES */}
         <div

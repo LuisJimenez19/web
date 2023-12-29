@@ -8,7 +8,6 @@ import "../css/index.css";
 import { useEffect, useRef } from "react";
 import { ShowLastVisit } from "../../../components/ShowLastVisit";
 import { LinkGradient } from "../../../components/LinkGradient";
-import { useState } from "react";
 
 function Hero({ openSection = false }) {
   const CARD = useRef();
@@ -22,20 +21,11 @@ function Hero({ openSection = false }) {
     opacity: 0,
   };
 
-  const [widthPage, setWidthPage] = useState(window.innerWidth);
+  /* Habilitar ciertas funcionalidades */
+  const isDesktop = window.innerWidth > 767;
 
   useEffect(() => {
-    const resizePage = () => {
-      setWidthPage(window.innerWidth);
-    };
-
-    window.addEventListener("resize", resizePage);
-
-    return () => window.removeEventListener("resize", resizePage);
-  }, []);
-
-  useEffect(() => {
-    if (widthPage > 767) {
+    if (isDesktop) {
       const UPDATE = (event) => {
         // get the angle based on the center point of the card and pointer position
 
@@ -75,7 +65,7 @@ function Hero({ openSection = false }) {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [widthPage]);
+  }, []);
 
   return (
     <section
@@ -111,13 +101,12 @@ function Hero({ openSection = false }) {
           }} */
           className="text-left w-full px-2 flex flex-col gap-1 text-slate-800 dark:text-slate-100
           animate-fade-down animate-once animate-ease-in animate-duration-200
-          
+            
           "
         >
           <div>
             <h1
               className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-righteous whitespace-nowrap  leading-none
-            
             "
             >
               <span
@@ -143,7 +132,7 @@ function Hero({ openSection = false }) {
 
           <LinkGradient
             className="animate-fade-down animate-ease-out"
-            aria-label="Envia a un documento de google drive en donde esta el curriculum vitae de Luis Ángel Jimenez "
+            aria-label="Enlace para descargar el curriculul de Luis Ángel Jimenez"
             href={
               "https://drive.google.com/file/d/1mqjR4KkoGE3p9A-ASof1j4sWXWbJ3GbU/view?usp=sharing"
             }
@@ -154,22 +143,25 @@ function Hero({ openSection = false }) {
         {/* IMAGEN */}
         <section className="flex w-full items-center justify-center ">
           {/* DETRAS DE LA FOTO */}
-          <Background className={"absolute "} />
+          {isDesktop && <Background className={"absolute "} />}
 
           <motion.div
-            className="align-bottom flex md:items-center items-end justify-center cursor-grab active:cursor-grabbing relative  
-            w-[220px] h-[293px] 
-            sm:w-[360px] sm:h-[500px]
-            lg:w-[390px] lg:h-[520px]
+            className="align-bottom flex md:items-center items-end justify-center select-none md:cursor-grab md:active:cursor-grabbing relative  overflow-hidden
 
-             max-w-[390px] max-h-[520px]
+            w-[220px] h-[293px] 
+            sm:w-[270px] sm:h-[420px]
+            md:w-[290px] md:h-[440px]
+            lg:w-[370px] lg:h-[500px]
+            xl:w-[390px] xl:h-[520px]
+
+            max-w-[390px] max-h-[520px]
            
-                dark:bg-dark-blue
-                  bg-slate-300
-                  shadow-xl
-                  rounded-xl
+            bg-slate-300 
+            dark:bg-dark-blue
+            shadow-xl
+            rounded-xl
                 "
-            drag
+            drag={isDesktop}
             dragElastic
             dragConstraints={{
               bottom: 200,
@@ -178,14 +170,23 @@ function Hero({ openSection = false }) {
               right: 1,
             }}
           >
+            <div
+              className="absolute top-0 h-full w-full bg-slate-300 dark:bg-dark-blue 
+              dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-5%,rgba(120,119,198,0.6)_10%,rgba(120,119,198,0.4),rgba(120,119,198,0.3)_30%,rgba(255,255,255,0))]
+
+              bg-[radial-gradient(ellipse_80%_90%_at_50%_-5%,rgb(255,190,242,0.8),rgba(255,255,255,0.5))] 
+
+
+            animate-fade-down animate-duration-[2000ms]
+            "
+            ></div>
+
             <img
+              loading="eager"
               width="100%"
               height="100%"
-              className="border w-full h-full"
               alt="Foto animada de Luis Angel Jimenez"
-              className=" w-full md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] block pointer-events-none 
-              animate-fade-up
-              "
+              className=" w-full md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] block pointer-events-none animate-fade-up"
               /*  initial={{
                 opacity: 0,
                 translateY: "10%",

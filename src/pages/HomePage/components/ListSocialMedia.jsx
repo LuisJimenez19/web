@@ -42,7 +42,12 @@ function ListSocialMedia() {
             `}
             key={social.link}
           >
-            <a href={social.link} rel="noreferrer" target="_blank">
+            <a
+              aria-label={social["arial-label"]}
+              href={social.link}
+              rel="noreferrer noopener"
+              target="_blank"
+            >
               {social.icon}
             </a>
           </li>
