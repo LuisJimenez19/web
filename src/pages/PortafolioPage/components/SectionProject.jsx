@@ -14,9 +14,11 @@ import { MockupProject } from "./MockupProject";
 Las primeras son desktop, hacer que se cambien cada tanto.
 */
 
+
+
 function SectionProject({ project }) {
   return (
-    <div className="flex flex-col hover:backdrop-brightness-105 hover:shadow p-5  md:flex-row items-center justify-center  transition-all card-project">
+    <article className="flex flex-col hover:backdrop-brightness-105 hover:shadow p-5  md:flex-row items-center justify-center  transition-all card-project">
       <div className=" flex-1 flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-righteous">
@@ -63,6 +65,7 @@ function SectionProject({ project }) {
             target="_blank"
             href={project.linkDemo}
             rel="noreferrer"
+            aria-label={`Enlace Que lleva a la página del proyecto ${project.name}`}
           >
             <ClipIcon className="w-10" />
           </a>
@@ -76,6 +79,8 @@ function SectionProject({ project }) {
             href={project.linkGithub}
             target="_blank"
             rel="noreferrer"
+            aria-label={`Enlace Que lleva al repositorio del proyecto ${project.name}`}
+
           >
             <GithubIcon stroke="#fff" className="w-10" />
           </a>
@@ -83,7 +88,7 @@ function SectionProject({ project }) {
       </div>
 
       <MockupProject project={project} />
-    </div>
+    </article>
   );
 }
 
