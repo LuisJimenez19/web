@@ -1,19 +1,7 @@
-import { useEffect, useState } from "react";
 import { socialIcons } from "../constants/socialIcons";
 
 function ListSocialMedia() {
-  const [heigth, setHeigth] = useState(window.innerHeight);
-
-  useEffect(() => {
-    const updateState = () => {
-      setHeigth(window.innerHeight);
-    };
-    window.addEventListener("resize", updateState);
-
-    return () => {
-      window.removeEventListener("resize", updateState);
-    };
-  }, []);
+  const heigth = window.innerHeight;
 
   return (
     <ul

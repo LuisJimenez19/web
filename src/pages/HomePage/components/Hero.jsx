@@ -126,7 +126,7 @@ function Hero({ openSection = false }) {
           </div>
 
           <p className="mx-auto text-sm md:text-base">
-            +{calculateAge("01/01/2021")} años en el mundo del Desarrollo de
+            +{calculateAge("01/06/2021")} años en el mundo del Desarrollo de
             Software. Actualmente estoy enfocado en el Desarrollo Web.
           </p>
 
@@ -182,10 +182,9 @@ function Hero({ openSection = false }) {
             ></div>
 
             <img
-              rel="preload"
               loading="eager"
-              width="100%"
-              height="100%"
+              width={100}
+              height={100}
               alt="Foto animada de Luis Angel Jimenez"
               className=" w-full md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] block pointer-events-none animate-fade-up"
               /*  initial={{

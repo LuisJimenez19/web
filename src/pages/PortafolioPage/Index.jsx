@@ -29,9 +29,7 @@ function PortafolioPage() {
 
       .catch((e) => console.log(e))
       .finally(() => {
-        setTimeout(() => {
-          setLoading(false);
-        }, 300);
+        setLoading(false);
       });
   }, []);
 
