@@ -1,4 +1,4 @@
-import {
+/* import {
   collection,
   limit,
   onSnapshot,
@@ -7,41 +7,13 @@ import {
 } from "firebase/firestore";
 import { useEffect, useRef } from "react";
 import { db } from "../libs/firebase";
-import { useState } from "react";
+import { useState } from "react"; */
+import { useContext, useEffect} from "react";
+import { ContextProvider } from "@/context/ContextLastVisit";
 
 function ShowLastVisit() {
-  const [message, setMessage] = useState("");
-  const [ready, setReady] = useState(true);
-
-  const $last = useRef();
-  const $next = useRef();
-
-  useEffect(() => {
-    const unSub = onSnapshot(
-      query(collection(db, "visits"), orderBy("timestamp", "desc"), limit(3)),
-      (snap) => {
-        const data = snap.docs;
-        const lastVisit = data[0]?.data();
-        const penultimateVisit = data[1]?.data();
-
-        if (lastVisit && penultimateVisit) {
-          const isLastEmpty = $last.current.innerHTML === ""; // solo cuando es la primera vez, muestra la ubicación anterior
-
-          if (isLastEmpty && penultimateVisit.city !== lastVisit.city) {
-            $last.current.innerHTML = `Última visita desde ${penultimateVisit.city}, ${penultimateVisit.country} ${penultimateVisit.flag}`;
-          }
-
-          setMessage(
-            `Última visita desde ${lastVisit.city}, ${lastVisit.country} ${lastVisit.flag}`
-          );
-        }
-      },
-      (error) => console.log(error)
-    );
-
-    return () => unSub();
-  }, []);
-
+ 
+  const { $last, $next, message, ready, setReady } = useContext(ContextProvider);
   useEffect(() => {
     if (ready === false) return;
 
@@ -69,9 +41,8 @@ function ShowLastVisit() {
 
     //eslint-disable-next-line
   }, [message]);
-
   return (
-    <div className="flex flex-col   overflow-hidden h-6 absolute  top-1 md:top-auto md:left-1 md:bottom-1  text-center md:text-left">
+    <div className="flex flex-col   overflow-hidden h-6 absolute  top-1 md:top-auto md:left-1 md:bottom-1  text-center md:text-left ">
       <small
         ref={$last}
         className=" text-xs md:text-sm font-poppins whitespace-nowrap"

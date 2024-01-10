@@ -1,31 +1,34 @@
 :root {
   --from-skeleton: #e3e3e3;
   --to-skeleton: #b5ccd2;
-
-  --view-timeline-name: --image;
 }
 
-@keyframes showproject {
+#container-projects {
+  --view-timeline-name: --project;
+}
+
+@keyframes showProject {
   from {
     opacity: 0;
-    scale: 25%;
+    scale: 50%;
   }
   to {
     opacity: 1;
     scale: 100%;
   }
 }
-
-.card-project {
-  view-timeline-name: --image;
+/* Animación con el scroll, no sé porque no sirve, tal vez algún conflicto con la animación que hace cuando aparece la página */
+/* .card-project {
+  view-timeline-name: var(--view-timeline-name);
   view-timeline-axis: block;
 
-  animation-timeline: var(--image);
-  animation-name: showProyect;
+  animation-timeline: var(--view-timeline-name);
+  animation-name: showProject;
 
+  animation-duration: 200ms;
   animation-range: entry 25% cover 30%;
   animation-fill-mode: both;
-}
+} */
 
 /* <-----------skeleton effect--------------> */
 

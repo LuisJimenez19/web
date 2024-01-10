@@ -65,7 +65,7 @@ function HomePage() {
               aria-label="Enlace que envia a la página que contiene la información de Luis Ángel Jimenez"
               to={"/about"}
               className=" border border-dark-blue dark:border-light-cyan border-dashed p-2 hover:border-solid 
-            hover:shadow-xl shadow-dark-grayish-blue hover:scale-110z
+            hover:shadow-xl shadow-dark-grayish-blue hover:scale-110
             transition-all "
             >
               <span className="whitespace-nowrap font-bold ">Sobre mi</span>

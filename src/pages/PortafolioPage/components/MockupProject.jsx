@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChangeIcon } from "../../../icons/Icons";
+import { ChangeIcon } from "@/icons/Icons";
 import { SkeletonImage } from "./SkeletonImage";
 
 function MockupProject({ project }) {

@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { Header } from "../components/Header";
+import { Header } from "@/components/Header";
 
 import "./default-layout.css";
 
@@ -17,8 +17,9 @@ function DefaultLayout({ children, className = "" }) {
       relative overflow-hidden
        `}
     >
-      <Suspense>
+      <Suspense fallback={false}>
         <Header />
+
         <main className={` flex flex-col flex-grow  ${className}`}>
           {children}
         </main>

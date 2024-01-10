@@ -78,7 +78,7 @@ function Hero({ openSection = false }) {
         id="card"
         className={`
                 text-center  max-w-[1000px]  m-2
-              min-h-[50dvh] p-2
+              min-h-[50vh] p-2
               flex flex-col  md:flex-row 
               md:justify-center md:items-center 
             items-end justify-end
@@ -182,6 +182,7 @@ function Hero({ openSection = false }) {
             ></div>
 
             <img
+              rel="preload"
               loading="eager"
               width="100%"
               height="100%"

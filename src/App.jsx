@@ -14,6 +14,8 @@ import { useEffect } from "react";
 import { db } from "./libs/firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { URL_GEOLOCATION } from "./config";
+import { ContextLastVisit } from "./context/ContextLastVisit";
+// import { ShowLastVisit } from "./components/ShowLastVisit";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +75,7 @@ function App() {
 
   useEffect(() => {
     /* Obtengo los datos del usuario que visita la página */
+
     fetch(URL_GEOLOCATION)
       .then((res) => res.json())
       .then((data) => {
@@ -87,10 +90,11 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ContextLastVisit>
+      {/* <ShowLastVisit /> */}
       <RouterProvider router={router} />
       <BtnToTop />
-    </>
+    </ContextLastVisit>
   );
 }
 

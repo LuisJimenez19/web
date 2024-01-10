@@ -124,7 +124,7 @@ function ListProjects({ projects, loading }) {
   }
 
   return (
-    <div className=" w-[90%] max-w-[1240px] mx-auto  flex flex-col gap-16 xl:gap-20 pb-14 lg:pb-[200px] fade-in  transition-all">
+    <div className=" w-[90%] max-w-[1240px] mx-auto  flex flex-col gap-16 xl:gap-20 pb-14 lg:pb-[200px] fade-in  transition-all" id="container-projects">
       {/* CADA PROYECTO */}
       {/* Si dejo de cargar y ya hay proyectos */}
       {!loading && projects.length > 0 ? (

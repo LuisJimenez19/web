@@ -7,6 +7,8 @@ import { useRef, useState } from "react";
 import urlVideo from "../../assets/videos/barbaro.mp4";
 import { calculateAge } from "../../helpers/calculateAge";
 
+import iconCursor from "../../assets/images/icons-cursor.svg";
+
 function AboutPage() {
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef();
@@ -18,27 +20,6 @@ function AboutPage() {
   return (
     <DefaultLayout>
       <div
-        /*  layout
-        key="PáginaAboutMe"
-        initial={{
-          translateY: "100%",
-          opacity: 0,
-        }}
-        animate={{
-          translateY: 0,
-          opacity: 1,
-          background: `linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.2) 60%,
-            rgba(0, 0, 0, 0.2)
-          )`,
-
-          transitionDuration: ".15s",
-        }}
-        exit={{
-          translateY: "100%",
-          transitionDuration: "5s",
-        }} */
         className=" w-full h-full flex-grow flex  flex-col items-center 
         animate-fade-up animate-duration-200 animate-ease-out bg-black/10
         "
@@ -54,16 +35,6 @@ function AboutPage() {
           <div className="flex flex-col lg:flex-row gap-5 relative">
             {showVideo ? (
               <video
-                /*      initial={{
-                  opacity: 0,
-
-                  translateY: "10px",
-                }}
-                animate={{
-                  opacity: 1,
-
-                  translateY: 0,
-                }} */
                 height={400}
                 width={300}
                 autoPlay
@@ -115,10 +86,20 @@ function AboutPage() {
               <button
                 aria-label="Muestra u oculta el video que describe la personalidad de Luis Angel Jimenez"
                 onClick={toggleShowVideo}
-                className={`w-10 h-5 rounded-3xl absolute  shadow-inner bottom-2 right-0 
-                hover:brightness-110 hover:scale-95 border
-                transition-all ${showVideo ? "bg-rose-700" : "bg-emerald-700"}`}
-              ></button>
+                className={`w-14 h-10 rounded-md absolute  shadow-inner -bottom-3 right-0 
+                hover:brightness-110 hover:scale-95 border bg-contain bg-center bg-no-repeat 
+                transition-all flex items-center justify-center group ${
+                  showVideo ? "bg-rose-700/20" : "bg-emerald-700/20"
+                }`}
+              >
+                <img
+                  src={iconCursor}
+                  width={40}
+                  height={40}
+                  className="animate-jump animate-delay-500 group-hover:animate-wiggle group-hover:animate-infinite"
+                  alt="icono del cursor"
+                />
+              </button>
             </div>{" "}
           </div>
         </div>

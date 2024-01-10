@@ -9,6 +9,7 @@ function Background({ className = "" }) {
         Dejo esta foto porque soy barbaro
       </p>
       <img
+        rel="preload"
         className="w-[150px] "
         src={unoImg}
         alt="Imagen de uno, de los chicos del barrio"
