@@ -68,9 +68,9 @@ function App() {
       timestamp: Date.now(),
     })
       .then((res) => {
-        console.log(`Toma por curioso: ${res.id}`);
+        console.log(`Take for curious : ${res.id}`);
       })
-      .catch((e) => console.log(e));
+      .catch((e) => e);
   }
 
   useEffect(() => {

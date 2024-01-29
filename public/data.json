@@ -30,30 +30,7 @@
         ]
       },
 
-      {
-        "images": [
-          "/mockups/jn_desktop.webp",
-          "/mockups/jn2_desktop.webp",
-          "/mockups/jn3_desktop.webp",
-          
-          "/mockups/jn_mobile.webp",
-          "/mockups/jn2_mobile.webp",
-          "/mockups/jn3_mobile.webp"
-         
-        ],
-        "name": "JN Entrenamientos",
-        "subtitle": "Palataforma de entrenamientos personalizados",
-        "description": "<p>Plataforma construida con Laravel, Inertia, React y MySql. En este proyecto solo trabaje en la parte del front-end, con react y tailwind.</p> <p>Tuve la oportunidad de aprender un poco como Inertia integra muy bien React al stack de Laravel permitiendo renderización del lado del servidor sin sacrificar la comodidad del desarrollo de SPA.</p><p><small>Esta es una DEMO de la landing page de la plataforma, acutalmente estamos trabajando en ella.</small></p>",
-        "linkDemo": "https://demo-jn-entrenamientos.netlify.app/",
-        "badges": [
-          "php",
-          "laravel",
-          "react",
-          "tailwind",
-          "javaScript",
-          "mySql"
-        ]
-      },
+     
       {
         "images": [
           "/mockups/gestion_desktop.webp",
@@ -140,6 +117,7 @@
           "javaScript"
         ]
       }
+      
     ]
   }
   

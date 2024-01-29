@@ -23,11 +23,10 @@ function PortafolioPage() {
         setProjects(data.projects);
         INITIAL_PROJECTS.current = data.projects;
         const tecnologies = getTecnologies(data.projects);
-        console.log(data);
         setTecnologiesForFilter(tecnologies);
       })
 
-      .catch((e) => console.log(e))
+      .catch((e) => e)
       .finally(() => {
         setLoading(false);
       });

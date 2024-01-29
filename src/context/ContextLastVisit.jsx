@@ -25,7 +25,7 @@ function ContextLastVisit({ children }) {
         const lastVisit = data[0]?.data();
         const penultimateVisit = data[1]?.data();
 
-        if (lastVisit && penultimateVisit ) {
+        if (lastVisit && penultimateVisit) {
           const isLastEmpty = $last.current?.innerHTML === ""; // solo cuando es la primera vez, muestra la ubicación anterior
 
           if (isLastEmpty && penultimateVisit.city !== lastVisit.city) {
@@ -36,7 +36,7 @@ function ContextLastVisit({ children }) {
           `Última visita desde ${lastVisit.city}, ${lastVisit.country} ${lastVisit.flag}`
         );
       },
-      (error) => console.log(error)
+      (error) => error
     );
 
     return () => unSub();

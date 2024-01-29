@@ -17,7 +17,7 @@ function DefaultLayout({ children, className = "" }) {
       relative overflow-hidden
        `}
     >
-      <Suspense fallback={false}>
+      <Suspense fallback>
         <Header />
 
         <main className={` flex flex-col flex-grow  ${className}`}>
