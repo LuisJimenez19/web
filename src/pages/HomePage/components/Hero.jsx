@@ -69,8 +69,29 @@ function Hero({ openSection = false }) {
 
   return (
     <section
-      className={`flex items-center justify-center w-[99%] lg:w-[95%]  flex-grow relative `}
+      className={`flex flex-col items-center justify-center w-[99%] lg:w-[95%]  flex-grow relative `}
     >
+      <a
+        href="https://www.luis-dev.pro"
+        className=" font-poppins underline underline-offset-4 hover:underline-offset-2 hover:scale-105 transition-all group fade-in  flex items-start gap-1 "
+      >
+        <p className=" block group-hover:text-purple-300">Nueva versión disponible</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className="w-5 group-hover:scale-120 group-hover:text-purple-300 transition-all"
+        >
+          {" "}
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+          />{" "}
+        </svg>
+      </a>
       <ShowLastVisit />
       {/* CAJA CONTIENE EL TEXTO Y LA IMAGEN */}
       <div

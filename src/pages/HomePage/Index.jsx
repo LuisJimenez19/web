@@ -52,6 +52,7 @@ function HomePage() {
             relative home-page__center ${openSection ? "active" : ""}`}
         >
           {/* CARD */}
+
           <Hero openSection={openSection} />
 
           {/* FOOTER */}
