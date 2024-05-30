@@ -11,10 +11,9 @@ import { SkillsPage } from "./pages/SkillsPage";
 import { HomePage } from "./pages/HomePage/Index";
 import { ErrorPage } from "./pages/ErrorPage";
 import { useEffect } from "react";
-import { db } from "./libs/firebase";
-import { addDoc, collection } from "firebase/firestore";
 import { URL_GEOLOCATION } from "./config";
 import { ContextLastVisit } from "./context/ContextLastVisit";
+import { saveGeolocation } from "./libs/saveDataLastVisit";
 // import { ShowLastVisit } from "./components/ShowLastVisit";
 
 const router = createBrowserRouter([
@@ -60,7 +59,7 @@ function App() {
     "flag": "🇦🇷" */
 
   /* Guardo la información en la base de datos */
-  function saveGeolocation({ city, country, flag }) {
+/*   function saveGeolocation({ city, country, flag }) {
     addDoc(collection(db, "visits"), {
       city,
       country,
@@ -71,7 +70,7 @@ function App() {
         console.log(`Take for curious : ${res.id}`);
       })
       .catch((e) => e);
-  }
+  } */
 
   useEffect(() => {
     /* Obtengo los datos del usuario que visita la página */

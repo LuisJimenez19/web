@@ -16,6 +16,7 @@ function MockupProject({ project }) {
 
   const [currentImageMobile, setCurrentImageMobile] = useState(imagesMobile[0]);
 
+  /* Return the next index to show, array of images and current image index */
   function changeIndexImage(images, currentImage) {
     const lastIndex = images.length - 1;
     const currentIndex = images.findIndex((img) => img === currentImage);
