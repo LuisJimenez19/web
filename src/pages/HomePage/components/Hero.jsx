@@ -155,7 +155,7 @@ function Hero({ openSection = false }) {
             className="animate-fade-down animate-ease-out"
             aria-label="Enlace para descargar el curriculul de Luis Ángel Jimenez"
             href={
-              "https://drive.google.com/file/d/1mqjR4KkoGE3p9A-ASof1j4sWXWbJ3GbU/view?usp=sharing"
+              "https://drive.google.com/file/d/1iVOqrgMbOPD6JJoloW486MGcuqaHLMY3/view"
             }
             text="Descargar CV"
           />
